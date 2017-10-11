@@ -1,0 +1,64 @@
+<ion-menu [content]="nav" side="right">
+  <ion-header>
+    <ion-toolbar color="menuColor">
+      <ion-title menuToggle>
+        <ion-list>
+          <ion-item class="arabicright">
+            <ion-thumbnail item-end>
+              <img src="../assets/icon/mainIcon.png">
+            </ion-thumbnail>
+            <h2>قراء المساجد</h2>
+          </ion-item>
+        </ion-list>
+      </ion-title>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="arabicright">
+    <ion-list>
+      <ion-buttons>
+        <button ion-item no-lines class="arabicright" (click)="onLoad(rootPage)">
+          <ion-icon name="md-people" item-right></ion-icon>
+          قائمه القراء
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(mostLikedPage)" >
+          <ion-icon name="md-star" item-right></ion-icon>
+          اﻻكثر تفضيلا
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(closestPlacePage)">
+          <ion-icon name="md-locate" item-right></ion-icon>
+          اﻻقرب لمكانى
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(myFavoritePage)">
+          <ion-icon name="md-heart" item-right></ion-icon>
+          مفضلتى
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(addReaderPage)">
+          <ion-icon name="md-person-add" item-right></ion-icon>
+          اضف قارئا جديدا
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="share()">
+          <ion-icon name="md-share" item-right></ion-icon>
+          انشر التطبيق
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(callUsPage)">
+          <ion-icon name="md-call" item-right></ion-icon>
+          اتصل بنا
+        </button>
+
+        <button ion-item no-lines class="arabicright" (click)="onLoad(aboutUsPage)">
+          <ion-icon name="md-information-circle" item-right></ion-icon>
+          عن التطبيق
+        </button>
+      </ion-buttons>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #nav></ion-nav>

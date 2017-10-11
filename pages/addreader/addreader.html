@@ -1,0 +1,78 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>اضف قارئا جديد</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+      <ion-input name="name" type="text"
+                 placeholder="ادخل اسم القارىء"
+                 required minlength="4"
+                 [(ngModel)]="shik.name" #name="ngModel">
+      </ion-input>
+    </ion-item>
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+         class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+    </div>
+
+      <ion-item>
+        <ion-input name="city" type="text"
+                   placeholder=" مدينة المقرىء"
+                   required minlength="4"
+                   [(ngModel)]="shik.city" #city="ngModel">
+        </ion-input>
+
+      </ion-item>
+
+      <div *ngIf="city.invalid && (city.dirty || city.touched)"
+           class="alert alert-danger">
+
+        <div *ngIf="city.errors.required">
+          Name is required.
+        </div>
+        <div *ngIf="city.errors.minlength">
+          Name must be at least 4 characters long.
+        </div>
+      </div>
+
+        <ion-item>
+          <ion-input name="mpURL" type="text"
+                     placeholder="رابط لتسجلات الشيخ"
+                     required minlength="4"
+                     [(ngModel)]="shik.mpURL" #mpURL="ngModel">
+          </ion-input>
+        </ion-item>
+
+        <div *ngIf="mpURL.invalid && (mpURL.dirty || mpURL.touched)"
+             class="alert alert-danger">
+
+          <div *ngIf="mpURL.errors.required">
+            Name is required.
+          </div>
+          <div *ngIf="mpURL.errors.minlength">
+            Name must be at least 4 characters long.
+          </div>
+        </div>
+  </ion-list>
+  <button ion-button full (click)="addShik()"> حفـــــظ</button>
+
+</ion-content>

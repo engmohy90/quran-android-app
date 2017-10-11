@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons end>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>مفضلتى</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngFor="let shik of shiks">
+    <ion-card *ngIf="favoriteIds.includes(shik.id)">
+      <ion-item (click)="getShik(shik.id)">
+        <ion-thumbnail item-end>
+          <img [src]="shik.mpURL">
+        </ion-thumbnail>
+        <ion-card-title text-right>
+          {{shik.name}}
+        </ion-card-title>
+        <p text-right>
+          {{shik.city}}
+        </p>
+      </ion-item>
+
+      <ion-buttons *ngIf="favoriteIds.includes(shik.id)">
+        <button ion-button color="white" (click)="removeFavorite(shik.id)">
+          <ion-icon name="md-star" padding color="yellow"></ion-icon>
+        </button>
+      </ion-buttons>
+
+    </ion-card>
+  </div>
+</ion-content>
